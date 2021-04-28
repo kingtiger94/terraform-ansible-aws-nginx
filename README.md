@@ -20,7 +20,7 @@
 
  **you can change destination folder in ~/deploynginx/defaults*
 
- ** source file in ~/deploynginx/files*
+ **source file in ~/deploynginx/files*
 
 
 **To start:**
