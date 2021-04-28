@@ -14,21 +14,21 @@ jobs:
     steps:
  
       ## Install terraform
-      - name: add hashicorp key
+      - name: Add hashicorp key
         run: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-      - name: add repo
+      - name: Add repo
         run: sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-      - name: install terraform
+      - name: Install terraform
         run: sudo apt update && sudo apt install terraform
       - name: Run a one-line script
         run: echo "Install terraform complete!"
     
     ## Clone and test
-      - name: clone repo
+      - name: Clone repo
         uses: actions/checkout@v2
       - run: echo "Repo cloned!"
-      - name: init
+      - name: Init start
         run: terraform init
-      - name: plan
+      - name: Plan start
         run: terraform plan
 
