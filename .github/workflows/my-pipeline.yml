@@ -1,0 +1,31 @@
+name: AVG-nginx-test
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+ 
+      ## Install terraform
+      - name: add hashicorp key
+        run: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      - name: add repo
+        run: sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+      - name: install terraform
+        run: sudo apt update && sudo apt install terraform
+      - name: Run a one-line script
+        run: echo "install terraform complete!"
+    
+    ## Clone and init
+      - name: clone repo
+        uses: actions/checkout@v2
+      - run: echo "repo cloned!"
+      - name: init
+        run: terraform init
+     # - name: plan
+     #   run: terraform plan
+
