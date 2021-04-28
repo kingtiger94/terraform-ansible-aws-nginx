@@ -18,8 +18,8 @@
 1. install Nginx
 2. copy config file
 
- **you can change destination folder in ~/deploynginx/defaults
-  source file in ~/deploynginx/files*
+ **you can change destination folder in ~/deploynginx/defaults*
+ ** source file in ~/deploynginx/files*
 
 
 **To start:**
