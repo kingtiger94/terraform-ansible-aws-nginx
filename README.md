@@ -19,6 +19,7 @@
 2. copy config file
 
  **you can change destination folder in ~/deploynginx/defaults*
+
  ** source file in ~/deploynginx/files*
 
 
