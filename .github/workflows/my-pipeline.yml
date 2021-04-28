@@ -23,12 +23,12 @@ jobs:
       - name: Run a one-line script
         run: echo "install terraform complete!"
     
-    ## Clone and init
+    ## Clone and test
       - name: clone repo
         uses: actions/checkout@v2
       - run: echo "repo cloned!"
       - name: init
         run: terraform init
-     # - name: plan
-     #   run: terraform plan
+      - name: plan
+        run: terraform plan
 
