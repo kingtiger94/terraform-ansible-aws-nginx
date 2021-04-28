@@ -136,9 +136,3 @@ resource "null_resource" "AVG_Ubuntu" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu -i '${join(", ", aws_instance.AVG_Ubuntu[*].public_ip)}', --private-key ${var.ssh_key_private} ${var.playbook_path}"
   }
 }
-
-## Show instance IP in the end of build
-output "instance_public_ip" {
-  description = "Public IP address of the EC2 instance"
-  value       = aws_instance.AVG_Ubuntu.public_ip
-}
