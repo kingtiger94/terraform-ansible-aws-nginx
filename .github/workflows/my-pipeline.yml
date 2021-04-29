@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: start tflint
         run: curl https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
-
+        run: wich tflint
 
 
 # Terraform test
