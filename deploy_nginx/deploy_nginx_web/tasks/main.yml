@@ -12,5 +12,4 @@
     src: default
     dest: "{{ destin_file }}/default"
     mode: 0755
-    
   notify: Restart nginx
