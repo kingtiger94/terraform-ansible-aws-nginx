@@ -5,14 +5,25 @@ on:
     branches: [ master ]
 
 jobs:
+# Test tflint
+  tflint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: start tflint
+        run: curl https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+
+
+# Terraform test
   terraform-plan-test:
     runs-on: ubuntu-latest
-    env: 
+    env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
- 
+
       ## Install terraform
       - name: Add hashicorp key
         run: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
@@ -22,7 +33,7 @@ jobs:
         run: sudo apt update && sudo apt install terraform
       - name: Run a one-line script
         run: echo "Install terraform complete!"
-    
+
     ## Clone and test
       - name: Clone repo
         uses: actions/checkout@v2
@@ -31,4 +42,3 @@ jobs:
         run: terraform init
       - name: Plan start
         run: terraform plan
-
