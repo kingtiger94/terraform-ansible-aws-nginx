@@ -1,3 +1,10 @@
+
+upstream backend {
+server backend1.somesite.com;
+server backend2.somesite.com;
+server backend3.somesite.com;
+}
+
 server {
 listen *:80 default_server;
 server_name _;
